@@ -38,8 +38,7 @@ public class PaymentController {
 	@RequestMapping("/payment/{movieName}")
 	public String insertPaymentInfo(@PathVariable String movieName, @RequestParam("cinemaName") String cinemaName,
 			@RequestParam("roomName") String roomName, @RequestParam("startTime") String startTime,
-			@RequestParam("roomType") String roomType, Model model, HttpServletRequest request,
-			HttpServletResponse response) {
+			@RequestParam("roomType") String roomType, Model model, HttpServletRequest request) {
 		int adult = Integer.parseInt(request.getParameter("adult"));
 		int teenager = Integer.parseInt(request.getParameter("teenager"));
 		int benefit = Integer.parseInt(request.getParameter("benefit"));

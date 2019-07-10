@@ -47,19 +47,24 @@ th {
 						<th></th>
 						<th></th>
 						<th>S</th>
+						<th></th>
 						<th>C</th>
+						<th></th>
 						<th>R</th>
+						<th></th>
 						<th>E</th>
+						<th></th>
 						<th>E</th>
+						<th></th>
 						<th>N</th>
 						<th></th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="i" begin="0" end="${seatsCount-10 }" step="10">
+					<c:forEach var="i" begin="0" end="${seatsCount-15 }" step="15">
 						<tr>
-							<c:forEach var="j" begin="1" end="10" step="1">
+							<c:forEach var="j" begin="1" end="15" step="1">
 								<td><c:set var="loop_flag" value="false" /> <c:forEach
 										var="remainSeatNumber" items="${remainSeatNumbers }">
 										<c:if test="${not loop_flag }">
@@ -79,9 +84,12 @@ th {
 					</c:forEach>
 				</tbody>
 			</table>
-			<button class="btn btn-primary btn-lg btn-block" type="submit">결제하기</button>
+			<hr>
+			<button class="btn btn-primary btn-lg btn-block" type="submit">결제
+				정보 입력</button>
 			<input type="hidden" name="${_csrf.parameterName }"
 				value="${_csrf.token}" />
 		</form>
+		<br>
 	</div>
 </div>

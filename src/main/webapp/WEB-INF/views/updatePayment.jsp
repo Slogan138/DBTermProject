@@ -7,12 +7,12 @@
 	<div class="container">
 		<section>
 			<div class="jumbotron">
-				<h2>
+				<h3>
 					좌석 번호 :
-					<c:forEach var="seatNumber" items="${seatNumbers }">${seatNumber } </c:forEach><br>
-					관람료 : ${fee }<br> 결제 방법 : ${paymentType }<br> 결제가
-					완료되었습니다.
-				</h2>
+					<c:forEach var="seatNumber" items="${seatNumbers }">${seatNumber } </c:forEach>
+					<br> 관람료 : ${fee }<br> 결제 방법 : ${paymentType }<br>
+					결제가 완료되었습니다.
+				</h3>
 			</div>
 		</section>
 	</div>
