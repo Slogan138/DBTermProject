@@ -65,13 +65,9 @@
 									<button type="button" class="btn btn-sm btn-outline-secondary"
 										onClick="location.href='${pageContext.request.contextPath}/viewMovie/${movie.movieName }'">상세정보</button>
 								</div>
-								<<<<<<< HEAD
+								
 								<button type="button" class="btn btn-sm btn-outline-secondary"
 									onClick="location.href='${pageContext.request.contextPath}/schedule/${movie.movieName }'">예매하기</button>
-								=======
-								<button type="button" class="btn btn-sm btn-outline-secondary"
-									onClick="location.href='${pageContext.request.contextPath}/schedule/${movie.movieName }'">예매하기</button>
-								>>>>>>> 39a24bff85e96bf25dda08c8db32cba29a399cc7
 							</div>
 						</div>
 					</div>
