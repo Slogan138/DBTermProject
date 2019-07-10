@@ -24,9 +24,13 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 
-<!-- Fonw awesome -->	
+<!-- Font awesome -->	
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.9.0/css/all.css">
 
+<!-- Custom styles for this template -->
+<link href="<c:url value="/resources/css/carousel.css"/>"  rel="stylesheet">
+<link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
+<link href="<c:url value="/resources/css/login.css"/>" rel="stylesheet">
 
 <style>
 .bd-placeholder-img {

@@ -9,7 +9,7 @@
 }
 
 .table th {
-	text-align : center;
+	text-align: center;
 	overflow: hidden;
 }
 
@@ -19,3 +19,15 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
+#navBack {
+	background-color: #0b4da2 !important
+}
+
+#navItem {
+	color: white;
+	font-weight: bold;
+}
+
+
+

@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="container-wrapper">
 	<div class="container">
@@ -27,8 +27,10 @@
 					<strong>개봉일: </strong> ${movie.releaseDate }
 				</p>
 				<p>
-					<strong>평점: </strong>
-					<fmt:formatNumber value="${movie.viewingRate }" pattern="0.0" />
+
+					<strong>평점: </strong>					 
+					  <fmt:formatNumber value="${movie.viewingRate}" pattern="0.0"/>
+
 				</p>
 				<p>
 					<strong>줄거리: </strong> ${movie.summary }

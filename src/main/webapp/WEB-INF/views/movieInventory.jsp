@@ -6,11 +6,11 @@
 
 <div class="container-wrapper">
 	<div class="container">
-		<h2>Movie Inventory</h2>
+		<h2>영화 목록 관리</h2>
 		<p>영화 상영 현황</p>
 		<table class="table table-striped">
 			<thead>
-				<tr class="bg-success">
+				<tr class="bg-primary text-white">
 					<th>영화 포스터</th>
 					<th>제목</th>					
 					<th>장르</th>
@@ -19,7 +19,7 @@
 					<th>개봉일</th>
 					<th>줄거리</th>
 					<th>평점</th>
-					<th> </th>
+					<th>수정/삭제 </th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,14 +36,14 @@
 						<td> <fmt:formatNumber value="${movie.viewingRate }" pattern="0.0"/> </td>
 
 						<td>						
-							<a href="<c:url value="/admin/movieInventory/updateMovie/${movie.movieName }"/>"><i class="far fa-edit fa-2x"></i></a>
-							<a href="<c:url value="/admin/movieInventory/deleteMovie/${movie.movieName }"/>"><i class="fa fa-times fa-2x"></i></a>							
+							<a href="<c:url value="/admin/movieInventory/updateMovie/${movie.movieName }"/>"><i class="far fa-file-alt fa-2x"></i></a>
+							<a href="<c:url value="/admin/movieInventory/deleteMovie/${movie.movieName }"/>"><i class="far fa-trash-alt fa-2x"></i></a>							
 						</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-		<a href="<c:url value="/admin/movieInventory/addMovie/"/>" class="btn btn-primary">Add Movie</a>
+		<a href="<c:url value="/admin/movieInventory/addMovie/"/>" class="btn btn-primary">영화 추가하기</a>
 		
 	</div>
 </div>

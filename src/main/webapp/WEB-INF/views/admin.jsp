@@ -4,27 +4,40 @@
 
 <div class="container-wrapper">
 	<div class="container">
-		<h2>Administrator Page</h2>		
+		<h2>관리 페이지</h2>
+	</div>
+	<br>
+	<br>
+	<br>
+
+	<div class="card-deck">
+		<div class="card bg-primary">
+			<div class="card-body text-center">
+				<p class="card-text">
+					<a style="color: white; font-weight: bold; font-size: 20px;"
+						href="<c:url value="/admin/movieInventory"/>"> 영화 목록 관리</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="card bg-primary">
+			<div class="card-body text-center">
+				<p class="card-text">
+					<a style="color: white; font-weight: bold; font-size: 20px;"
+						href="<c:url value="/admin/userInventory"/>"> 사용자 목록 관리</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="card bg-primary">
+			<div class="card-body text-center">
+				<p class="card-text">
+					<a style="color: white; font-weight: bold; font-size: 20px;"
+						href="<c:url value="/admin/cinemaInventory"/>">상영관 관리</a>
+				</p>
+			</div>
+		</div>
 	</div>
 
-
-	<div class="container">
-		<h2>
-			<a href="<c:url value="/admin/movieInventory"/>"> Movie Inventory</a>
-		</h2>
-	</div>
-
-	<div class="container">
-		<h2>
-			<a href="<c:url value="/admin/userInventory"/>"> User Inventory</a>
-		</h2>
-	</div>
-
-	<div class="container">
-		<h2>
-			<a href="<c:url value="/admin/cinemaInventory"/>">Cinema
-				Inventory</a>
-		</h2>
-	</div>
-
+</div>
 </div>

@@ -4,11 +4,11 @@
 
 <div class="container-wrapper">
 	<div class="container">
-		<h2>User Inventory</h2>
-		<p>사용자 목록</p>
+		<h2>사용자 목록 관리</h2>
+		<p>사용자 목록 현황</p>
 		<table class="table table-striped">
 			<thead>
-				<tr class="bg-success">					
+				<tr class="bg-primary text-white">					
 					<th>아이디</th>					
 					<th>패스워드</th>
 					<th>이메일</th>								
