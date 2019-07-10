@@ -47,6 +47,7 @@ public class SeatDao {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("delete from Seat where payment_index = :paymentIndex");
 		query.setParameter("paymentIndex", paymentIndex);
+		query.executeUpdate();
 
 	}
 }

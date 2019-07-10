@@ -63,11 +63,9 @@ public class PaymentService {
 	public void deleteMyPayment(int userId, String movieName, String cinemaName, String roomName, String paymentType,
 			int fee) {
 
-		List<Seat> willDelete = seatDao.getPaymentByPaymentIndex(paymentDao
-				.getUniquePayment(userId, movieName, cinemaName, roomName, paymentType, fee).getPaymentIndex());
 		int paymentIndex = paymentDao.getUniquePayment(userId, movieName, cinemaName, roomName, paymentType, fee)
 				.getPaymentIndex();
-
+		
 		seatDao.deleteSeat(paymentIndex);
 
 		paymentDao.deleteMyPayment(paymentIndex);
