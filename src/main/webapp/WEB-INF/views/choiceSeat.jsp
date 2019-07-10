@@ -13,7 +13,7 @@ th {
 	<div class="container">
 		<h2>좌석 선택</h2>
 		<form
-			action="${pageContext.request.contextPath}/payment/${schedule.movie.movieName }?cinemaName=${schedule.scheduleInfo.cinema.cineInfo.cinemaName}&roomName=${schedule.scheduleInfo.cinema.cineInfo.roomName }&startTime=${schedule.scheduleInfo.startTime }"
+			action="${pageContext.request.contextPath}/payment/${schedule.movie.movieName }?cinemaName=${schedule.scheduleInfo.cinema.cineInfo.cinemaName}&roomName=${schedule.scheduleInfo.cinema.cineInfo.roomName }&startTime=${schedule.scheduleInfo.startTime }&roomType=${roomType }"
 			method="post">
 			<div class="row">
 				<div class="col-md-2 mb-3">
@@ -61,8 +61,7 @@ th {
 						<tr>
 							<c:forEach var="j" begin="1" end="10" step="1">
 								<td><c:set var="loop_flag" value="false" /> <c:forEach
-										var="remainSeatNumber" items="${remainSeatNumbers }"
-										varStatus="varStatus">
+										var="remainSeatNumber" items="${remainSeatNumbers }">
 										<c:if test="${not loop_flag }">
 											<c:if test="${remainSeatNumber == (i+j)}">
 												<input type="checkbox" id="${i+j }" name="seatNumber"

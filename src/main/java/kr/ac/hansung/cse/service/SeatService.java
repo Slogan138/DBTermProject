@@ -27,21 +27,19 @@ public class SeatService {
 	private CinemaDao cinemaDao;
 
 	@SuppressWarnings("null")
-	public String[] getRemainSeats(String cinemaName, String roomName, String startTime) {
-		List<String> currentSeats = seatDao.getCurrentSeats(cinemaName, roomName, startTime);
+	public int[] getRemainSeats(String cinemaName, String roomName, String startTime) {
+		List<Seat> currentSeats = seatDao.getCurrentSeats(cinemaName, roomName, startTime);
 		int seatsCount = cinemaDao.getSeatsCount(cinemaName, roomName);
-		String[] remainSeats = new String[seatsCount];
+		int[] remainSeats = new int[seatsCount];
 
 		for (int i = 1; i < seatsCount + 1; i++) {
-			remainSeats[i - 1] = Integer.toString(i);
+			remainSeats[i - 1] = i;
 		}
 
 		for (int i = 0; i < seatsCount; i++) {
-			for (int j = 0; j < currentSeats.size(); j++) {
-				if (remainSeats[i].equals(currentSeats.get(j)))
-					remainSeats[i] = null;
-				break;
-			}
+			for (Seat current : currentSeats)
+				if (remainSeats[i] == current.getSeatNumber())
+					remainSeats[i] = 0;
 		}
 
 		return remainSeats;
