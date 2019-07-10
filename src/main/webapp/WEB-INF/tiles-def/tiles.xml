@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="base"
+		template="/WEB-INF/templates/layout.jsp">
+		<put-attribute name="title" value="eStore homepage" />
+		<put-attribute name="menu"
+			value="/WEB-INF/templates/menu.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/templates/footer.jsp" />
+	</definition>
+
+	<definition name="home" extends="base">
+		<put-attribute name="title" value="Hansung Cinema" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/home.jsp" />
+	</definition>
+
+	<definition name="products" extends="base">
+		<put-attribute name="title" value="Products page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/products.jsp" />
+	</definition>
+
+	<definition name="admin" extends="base">
+		<put-attribute name="title" value="Administrator page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin.jsp" />
+	</definition>
+
+	<definition name="productInventory" extends="base">
+		<put-attribute name="title"
+			value="Product Inventory page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/productInventory.jsp" />
+	</definition>
+
+	<definition name="addProduct" extends="base">
+		<put-attribute name="title" value="Add Product page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/addProduct.jsp" />
+	</definition>
+
+	<definition name="updateProduct" extends="base">
+		<put-attribute name="title" value="Update Product page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/updateProduct.jsp" />
+	</definition>
+
+	<definition name="login" extends="base">
+		<put-attribute name="title" value="Login page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/login.jsp" />
+	</definition>
+
+	<definition name="registerUser" extends="base">
+		<put-attribute name="title" value="Registration page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/registerUser.jsp" />
+	</definition>
+
+	<definition name="registerUserSuccess" extends="base">
+		<put-attribute name="title"
+			value="Registration Success page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/registerUserSuccess.jsp" />
+	</definition>
+
+	<definition name="viewProduct" extends="base">
+		<put-attribute name="title" value="Detail view page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/viewProduct.jsp" />
+	</definition>
+
+	<definition name="cart" extends="base">
+		<put-attribute name="title"
+			value="Cart information page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/cart.jsp" />
+	</definition>
+
+	<definition name="movieInventory" extends="base">
+		<put-attribute name="title" value="Movie Inventory page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/movieInventory.jsp" />
+	</definition>
+
+	<definition name="addMovie" extends="base">
+		<put-attribute name="title" value="Add Movie page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/addMovie.jsp" />
+	</definition>
+
+	<definition name="updateMovie" extends="base">
+		<put-attribute name="title" value="Update Movie page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/updateMovie.jsp" />
+	</definition>
+
+	<definition name="movies" extends="base">
+		<put-attribute name="title" value="Movies page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/movies.jsp" />
+	</definition>
+
+	<definition name="viewMovie" extends="base">
+		<put-attribute name="title" value="Detail view page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/viewMovie.jsp" />
+	</definition>
+
+	<definition name="schedules" extends="base">
+		<put-attribute name="title" value="Schedule Page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/schedules.jsp" />
+	</definition>
+
+	<definition name="choiceSeat" extends="base">
+		<put-attribute name="title" value="ChoiceSeat Page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/choiceSeat.jsp" />
+	</definition>
+
+	<definition name="updatePayment" extends="base">
+		<put-attribute name="title" value="Payment Update Page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/updatePayment.jsp" />
+	</definition>
+
+	<definition name="payment" extends="base">
+		<put-attribute name="title" value="Payment Page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/payment.jsp" />
+	</definition>
+
+	<definition name="payment" extends="base">
+		<put-attribute name="title" value="Payment Page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/payment.jsp" />
+	</definition>
+
+	<definition name="userInventory" extends="base">
+		<put-attribute name="title" value="User Inventory page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/userInventory.jsp" />
+	</definition>
+
+	<definition name="cinemaInventory" extends="base">
+		<put-attribute name="title"
+			value="Cinema Inventory page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/cinemaInventory.jsp" />
+	</definition>
+
+	<definition name="updateCinema" extends="base">
+		<put-attribute name="title" value="Update Cinema page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/updateCinema.jsp" />
+	</definition>
+
+	<definition name="addCinema" extends="base">
+		<put-attribute name="title" value="Add Cinema page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/addCinema.jsp" />
+	</definition>
+
+	<definition name="addReply" extends="base">
+		<put-attribute name="title" value="Add Reply page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/addReply.jsp" />
+	</definition>
+
+</tiles-definitions>
