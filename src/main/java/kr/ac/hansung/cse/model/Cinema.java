@@ -24,8 +24,4 @@ public class Cinema {
 	private String roomType;
 	private int roomSeats;
 
-	public void setCineInfo(String cinemaName, String roomName) {
-		this.cineInfo.setCinemaName(cinemaName);
-		this.cineInfo.setRoomName(roomName);
-	}
 }

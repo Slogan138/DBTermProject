@@ -1,6 +1,5 @@
 package kr.ac.hansung.cse.service;
 
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,5 +60,6 @@ public class SeatService {
 		seat.setSeatNumber(seatNumber);
 
 		seatDao.updateSeat(seat);
+
 	}
 }

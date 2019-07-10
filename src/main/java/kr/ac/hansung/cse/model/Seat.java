@@ -28,7 +28,7 @@ public class Seat {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="seat_index")
+	@Column(name = "seat_index")
 	private int seatIndex;
 
 	@ManyToOne

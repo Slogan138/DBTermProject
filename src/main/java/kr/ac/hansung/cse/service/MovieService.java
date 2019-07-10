@@ -35,5 +35,11 @@ public class MovieService {
 		movieDao.deleteMovieItem(movie);
 	}
 
+	public void updateRate(String movieName, String rate) {
+		Movie movie = movieDao.getMovieByMovieName(movieName);
+		movie.setViewingRate(rate);
+		movieDao.updateMovieItem(movie);
+	}
+
 
 }

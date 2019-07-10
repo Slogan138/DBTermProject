@@ -15,7 +15,7 @@
 	</definition>
 
 	<definition name="home" extends="base">
-		<put-attribute name="title" value="My eStore homepage" />
+		<put-attribute name="title" value="Hansung Cinema" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/home.jsp" />
 	</definition>
@@ -156,9 +156,33 @@
 	</definition>
 
 	<definition name="deleteMyPayment" extends="base">
-		<put-attribute name="title" value="Delete My Payment page" />
+		<put-attribute name="title"
+			value="Delete My Payment page" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/deleteMyPayment.jsp" />
 	</definition>
+	<definition name="cinemaInventory" extends="base">
+		<put-attribute name="title"
+			value="Cinema Inventory page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/cinemaInventory.jsp" />
+	</definition>
 
+	<definition name="updateCinema" extends="base">
+		<put-attribute name="title" value="Update Cinema page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/updateCinema.jsp" />
+	</definition>
+
+	<definition name="addCinema" extends="base">
+		<put-attribute name="title" value="Add Cinema page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/addCinema.jsp" />
+	</definition>
+
+	<definition name="addReply" extends="base">
+		<put-attribute name="title" value="Add Reply page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/addReply.jsp" />
+	</definition>
 </tiles-definitions>

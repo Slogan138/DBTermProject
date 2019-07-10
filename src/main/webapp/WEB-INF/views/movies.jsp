@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 
 <div class="container-wrapper">
 	<div class="container">
@@ -31,7 +32,7 @@
 						<td>${movie.actor }</td>
 						<td>${movie.releaseDate }</td>
 						<td>${movie.summary }</td>
-						<td>${movie.viewingRate }</td>
+						<td> <fmt:formatNumber value="${movie.viewingRate }" pattern="0.0"/></td>
 						<td> <a href="<c:url value="/viewMovie/${movie.movieName }"/>">자세히 보기</a></td>					
 					</tr>
 				</c:forEach>

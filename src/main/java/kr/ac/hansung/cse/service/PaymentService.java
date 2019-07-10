@@ -45,7 +45,7 @@ public class PaymentService {
 
 		payment.setCinema(cinema);
 		payment.setMovie(movie);
-		payment.setUser(user);
+		payment.setUsers(user);
 		payment.setPaymentType(paymentType);
 		payment.setFee(fee);
 

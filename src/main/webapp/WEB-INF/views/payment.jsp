@@ -9,7 +9,7 @@
 			method="post">
 			<h3>
 				관람료 : ${fee }<br> 성인 : ${adult }<br> 청소년 : ${teenager }<br>
-				우대 : ${benefit }<br>좌석 번호 : 
+				우대 : ${benefit }<br>좌석 번호 :
 				<c:forEach var="seatNumber" items="${seatNumbers }">
 					<input type="checkbox" id="${seatNumber }" name="seatNumber"
 						value="${seatNumber }" checked />${seatNumber }
@@ -60,7 +60,9 @@
 				to checkout</button>
 			<input type="hidden" name="${_csrf.parameterName }"
 				value="${_csrf.token}" /> <input type="hidden" name="fee"
-				value="${fee }" /><input type="hidden" name="totalReservSeatsCount" value="${totalReservSeatsCount }"/>
+				value="${fee }" /><input type="hidden" name="totalReservSeatsCount"
+				value="${totalReservSeatsCount }" />
+
 		</form>
 	</div>
 </div>

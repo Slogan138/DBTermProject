@@ -27,8 +27,8 @@ public class MovieReply {
 	private int replyIndex;
 
 	@ManyToOne
-	@JoinColumn(name = "username")
-	private User user;
+	@JoinColumn(name = "userId")
+	private User users;
 
 	@ManyToOne
 	@JoinColumn(name = "movie_name")

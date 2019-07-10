@@ -11,11 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -45,8 +43,8 @@ public class Payment implements Serializable {
 	private Movie movie;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "username")
-	private User user;
+	@JoinColumn(name = "user_id")
+	private User users;
 
 	private String paymentType;
 

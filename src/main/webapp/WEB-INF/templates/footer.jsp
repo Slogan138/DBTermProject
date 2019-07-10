@@ -5,6 +5,7 @@
 <!-- FOOTER -->
 <footer class="text-muted">
 	<div class="container">
+<<<<<<< HEAD
 		<p class="float-right">
 			<a href="#">Back to top</a>
 		</p>
@@ -15,6 +16,12 @@
 				homepage</a> or read our <a
 				href="/docs/4.3/getting-started/introduction/">getting started
 				guide</a>.
+=======
+		
+		
+		<p>
+			Hansung Cinema
+>>>>>>> 39a24bff85e96bf25dda08c8db32cba29a399cc7
 		</p>
 	</div>
 </footer>

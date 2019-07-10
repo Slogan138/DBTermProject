@@ -1,6 +1,5 @@
 package kr.ac.hansung.cse.dao;
 
-import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -48,7 +47,6 @@ public class SeatDao {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("delete from Seat where payment_index = :paymentIndex");
 		query.setParameter("paymentIndex", paymentIndex);
-		query.executeUpdate();
-	}
 
+	}
 }

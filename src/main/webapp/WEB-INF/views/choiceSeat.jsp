@@ -74,6 +74,7 @@ th {
 										</c:if>
 
 									</c:forEach></td>
+
 							</c:forEach>
 						</tr>
 					</c:forEach>
