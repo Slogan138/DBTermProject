@@ -55,7 +55,7 @@ public class SeatService {
 
 		Schedule schedule = scheduleDao.getSchdule(cinemaName, roomName, startTime);
 
-		seat.setPayment(payment.get(payment.size() - 1));
+		seat.setPayment(payment.get(payment.size()));
 		seat.setSchedule(schedule);
 		seat.setSeatNumber(seatNumber);
 

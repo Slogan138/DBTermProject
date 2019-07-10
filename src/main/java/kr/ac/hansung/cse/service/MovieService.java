@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.hansung.cse.dao.MovieDao;
 import kr.ac.hansung.cse.model.Movie;
-import kr.ac.hansung.cse.model.Product;
 
 @Service
 public class MovieService {

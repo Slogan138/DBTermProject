@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.ac.hansung.cse.model.Movie;
-import kr.ac.hansung.cse.model.Product;
 
 @Repository
 @Transactional
