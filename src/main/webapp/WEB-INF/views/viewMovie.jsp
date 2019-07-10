@@ -28,7 +28,7 @@
 				</p>
 				<p>
 					<strong>평점: </strong>
-					<fmt:formatNumber value=" ${movie.viewingRate }" pattern="0.0" />
+					<fmt:formatNumber value="${movie.viewingRate }" pattern="0.0" />
 				</p>
 				<p>
 					<strong>줄거리: </strong> ${movie.summary }
