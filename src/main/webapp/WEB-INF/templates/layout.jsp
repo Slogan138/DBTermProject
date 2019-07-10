@@ -13,11 +13,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
-<<<<<<< HEAD
-<title>Album example · Bootstrap</title>
-=======
 <title><tiles:insertAttribute name="title"/></title>
->>>>>>> 39a24bff85e96bf25dda08c8db32cba29a399cc7
 
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/4.3/examples/album/">
