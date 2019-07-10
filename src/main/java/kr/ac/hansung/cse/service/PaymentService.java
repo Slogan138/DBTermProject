@@ -8,11 +8,13 @@ import org.springframework.stereotype.Service;
 import kr.ac.hansung.cse.dao.CinemaDao;
 import kr.ac.hansung.cse.dao.MovieDao;
 import kr.ac.hansung.cse.dao.PaymentDao;
+import kr.ac.hansung.cse.dao.ScheduleDao;
 import kr.ac.hansung.cse.dao.SeatDao;
 import kr.ac.hansung.cse.dao.UserDao;
 import kr.ac.hansung.cse.model.Cinema;
 import kr.ac.hansung.cse.model.Movie;
 import kr.ac.hansung.cse.model.Payment;
+import kr.ac.hansung.cse.model.Schedule;
 import kr.ac.hansung.cse.model.User;
 
 @Service
@@ -28,6 +30,8 @@ public class PaymentService {
 	private UserDao userDao;
 	@Autowired
 	private SeatDao seatDao;
+	@Autowired
+	private ScheduleDao scheduleDao;
 
 	public void updatePayment(String cinemaName, String roomName, String movieName, String username, String paymentType,
 			int fee) {
@@ -61,7 +65,7 @@ public class PaymentService {
 	}
 
 	public void deleteMyPayment(int userId, String movieName, String cinemaName, String roomName, String paymentType,
-			int fee) {
+			int fee, String startTime) {
 
 		int paymentIndex = paymentDao.getUniquePayment(userId, movieName, cinemaName, roomName, paymentType, fee)
 				.getPaymentIndex();
@@ -69,5 +73,11 @@ public class PaymentService {
 		seatDao.deleteSeat(paymentIndex);
 
 		paymentDao.deleteMyPayment(paymentIndex);
+
+		Schedule schedule = scheduleDao.getSchdule(cinemaName, roomName, startTime);
+		schedule.setRemainSeatsCount(cinemaDao.getSeatsCount(cinemaName, roomName)
+				- seatDao.getCurrentSeats(cinemaName, roomName, startTime).size());
+
+		scheduleDao.updateSchedule(schedule);
 	}
 }

@@ -105,6 +105,13 @@ public class PaymentController {
 		int userId = userService.getUserByUsername(username).getId();
 		List<Payment> payments = paymentService.getPaymentByUserId(userId);
 
+		String[] startTimes = new String[payments.size()];
+
+		for (int i = 0; i < payments.size(); i++) {
+			startTimes[i] = seatService.getStartTimeByPaymentIndex(payments.get(i).getPaymentIndex());
+		}
+
+		model.addAttribute("startTimes", startTimes);
 		model.addAttribute("payments", payments);
 		return "checkMyPayment";
 	}
@@ -112,10 +119,10 @@ public class PaymentController {
 	@RequestMapping("/deleteMyPayment/{movieName}")
 	public String deleteMyPayment(@PathVariable String movieName, @RequestParam("cinemaName") String cinemaName,
 			@RequestParam("roomName") String roomName, @RequestParam("paymentType") String paymentType,
-			@RequestParam("fee") int fee, Model model) {
+			@RequestParam("fee") int fee, @RequestParam("startTime") String startTime, Model model) {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		int userId = userService.getUserByUsername(username).getId();
-		paymentService.deleteMyPayment(userId, movieName, cinemaName, roomName, paymentType, fee);
+		paymentService.deleteMyPayment(userId, movieName, cinemaName, roomName, paymentType, fee, startTime);
 		return "deleteMyPayment";
 	}
 

@@ -58,6 +58,9 @@ public class SeatService {
 		seat.setSeatNumber(seatNumber);
 
 		seatDao.updateSeat(seat);
+	}
 
+	public String getStartTimeByPaymentIndex(int paymentIndex) {
+		return seatDao.getSeatsByPaymentIndex(paymentIndex).get(0).getSchedule().getScheduleInfo().getStartTime();
 	}
 }

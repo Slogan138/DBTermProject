@@ -30,7 +30,7 @@ public class SeatDao {
 		return seats;
 	}
 
-	public List<Seat> getPaymentByPaymentIndex(int paymentIndex) {
+	public List<Seat> getSeatsByPaymentIndex(int paymentIndex) {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from Seat where payment_index = :paymentIndex");
 		query.setParameter("paymentIndex", paymentIndex);
