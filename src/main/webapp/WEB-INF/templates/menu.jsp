@@ -5,10 +5,11 @@
 
 <header>
 
-	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="navBack" >
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"
+		id="navBack">
 		<a href="<c:url value="/"/>"
-			class="navbar-brand d-flex align-items-center"> 
-			<i class="fas fa-film"></i> &nbsp; <strong>Hansung Cinema</strong>
+			class="navbar-brand d-flex align-items-center"> <i
+			class="fas fa-film"></i> &nbsp; <strong>Hansung Cinema</strong>
 		</a>
 
 		<div class="collapse navbar-collapse" id="">
@@ -22,9 +23,10 @@
 						<li class="nav-item"><a class="nav-link" id="navItem"
 							href="<c:url value="/admin"/>">관리 페이지</a></li>
 					</c:if>
-
-
-					<%-- <li class="nav-item"><a class="nav-link" href="<c:url value="/logout"/>">Logout</a></li> --%>
+					<c:if test="${pageContext.request.userPrincipal.name != null }">
+						<li class="nav-item"><a class="nav-link" id="navItem"
+							href="<c:url value="/checkMyPayment"/>">예매내역</a>
+					</c:if>
 					<li class="nav-item"><a class="nav-link" id="navItem"
 						href="javascript:document.getElementById('logout').submit()">로그아웃</a>
 					</li>
