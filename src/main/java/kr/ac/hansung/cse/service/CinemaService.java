@@ -38,4 +38,8 @@ public class CinemaService {
 		return cinemaDao.getCinemByNameNum(name, num);
 	}
 
+	public Cinema getCinemaByCinemaNameAndRoomName(String cinemaName, String roomName) {
+		return cinemaDao.getCinemaByCinemaNameAndRoomName(cinemaName, roomName);
+	}
+
 }

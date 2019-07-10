@@ -65,9 +65,14 @@
 									<button type="button" class="btn btn-sm btn-outline-secondary"
 										onClick="location.href='${pageContext.request.contextPath}/viewMovie/${movie.movieName }'">상세정보</button>
 								</div>
-								
-								<button type="button" class="btn btn-sm btn-outline-secondary"
-									onClick="location.href='${pageContext.request.contextPath}/schedule/${movie.movieName }'">예매하기</button>
+								<c:if test="${pageContext.request.userPrincipal.name != null }">
+									<button type="button" class="btn btn-sm btn-outline-secondary"
+										onClick="location.href='${pageContext.request.contextPath}/schedule/${movie.movieName }'">예매하기</button>
+								</c:if>
+								<c:if test="${pageContext.request.userPrincipal.name == null }">
+									<button type="button" class="btn btn-sm btn-outline-secondary"
+										onClick="location.href='${pageContext.request.contextPath}/login'">예매하기</button>
+								</c:if>
 							</div>
 						</div>
 					</div>

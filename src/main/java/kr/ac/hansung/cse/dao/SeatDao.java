@@ -18,19 +18,19 @@ public class SeatDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public List<String> getCurrentSeats(String cinemaName, String roomName, String startTime) {
+	public List<Seat> getCurrentSeats(String cinemaName, String roomName, String startTime) {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery(
-				"select seatNumber from Seat where cinema_name = :cinemaName and room_name = :roomName and start_time = :startTime order by seatNumber asc");
+				"from Seat where cinema_name = :cinemaName and room_name = :roomName and start_time = :startTime order by seatNumber asc");
 		query.setParameter("cinemaName", cinemaName);
 		query.setParameter("roomName", roomName);
 		query.setParameter("startTime", startTime);
-		List<String> seats = query.getResultList();
+		List<Seat> seats = query.getResultList();
 
 		return seats;
 	}
 
-	public List<Seat> getPaymentByPaymentIndex(int paymentIndex) {
+	public List<Seat> getSeatsByPaymentIndex(int paymentIndex) {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from Seat where payment_index = :paymentIndex");
 		query.setParameter("paymentIndex", paymentIndex);
@@ -47,6 +47,7 @@ public class SeatDao {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("delete from Seat where payment_index = :paymentIndex");
 		query.setParameter("paymentIndex", paymentIndex);
+		query.executeUpdate();
 
 	}
 }

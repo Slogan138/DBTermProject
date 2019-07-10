@@ -2,6 +2,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<c:if test="${flag }">
+	<script>
+		alert('예매 수와 좌석 수를 확인하여 주세요.');
+		history.go(-1);
+	</script>
+</c:if>
+
 <div class="container-wrapper">
 	<div class="container">
 		<form

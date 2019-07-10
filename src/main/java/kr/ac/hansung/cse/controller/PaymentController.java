@@ -1,8 +1,11 @@
 package kr.ac.hansung.cse.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,23 +37,25 @@ public class PaymentController {
 
 	@RequestMapping("/payment/{movieName}")
 	public String insertPaymentInfo(@PathVariable String movieName, @RequestParam("cinemaName") String cinemaName,
-			@RequestParam("roomName") String roomName, @RequestParam("startTime") String startTime, Model model,
-			HttpServletRequest request) {
+			@RequestParam("roomName") String roomName, @RequestParam("startTime") String startTime,
+			@RequestParam("roomType") String roomType, Model model, HttpServletRequest request,
+			HttpServletResponse response) {
 		int adult = Integer.parseInt(request.getParameter("adult"));
 		int teenager = Integer.parseInt(request.getParameter("teenager"));
 		int benefit = Integer.parseInt(request.getParameter("benefit"));
 
-		int fee = paymentService.calcFee(adult, teenager, benefit);
+		int fee = paymentService.calcFee(adult, teenager, benefit, roomType);
 
 		String[] seatNumbers = request.getParameterValues("seatNumber");
-
 		int totalReservSeatsCount = adult + teenager + benefit;
 
 		if (seatNumbers.length == (adult + teenager + benefit))
-			model.addAttribute("seatNumbers", seatNumbers);
-		else
-			return "redirect:" + request.getHeader("Referer");
+			model.addAttribute("flag", false);
 
+		else
+			model.addAttribute("flag", true);
+
+		model.addAttribute("seatNumbers", seatNumbers);
 		model.addAttribute("adult", adult);
 		model.addAttribute("teenager", teenager);
 		model.addAttribute("benefit", benefit);
@@ -100,6 +105,13 @@ public class PaymentController {
 		int userId = userService.getUserByUsername(username).getId();
 		List<Payment> payments = paymentService.getPaymentByUserId(userId);
 
+		String[] startTimes = new String[payments.size()];
+
+		for (int i = 0; i < payments.size(); i++) {
+			startTimes[i] = seatService.getStartTimeByPaymentIndex(payments.get(i).getPaymentIndex());
+		}
+
+		model.addAttribute("startTimes", startTimes);
 		model.addAttribute("payments", payments);
 		return "checkMyPayment";
 	}
@@ -107,10 +119,10 @@ public class PaymentController {
 	@RequestMapping("/deleteMyPayment/{movieName}")
 	public String deleteMyPayment(@PathVariable String movieName, @RequestParam("cinemaName") String cinemaName,
 			@RequestParam("roomName") String roomName, @RequestParam("paymentType") String paymentType,
-			@RequestParam("fee") int fee, Model model) {
+			@RequestParam("fee") int fee, @RequestParam("startTime") String startTime, Model model) {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		int userId = userService.getUserByUsername(username).getId();
-		paymentService.deleteMyPayment(userId, movieName, cinemaName, roomName, paymentType, fee);
+		paymentService.deleteMyPayment(userId, movieName, cinemaName, roomName, paymentType, fee, startTime);
 		return "deleteMyPayment";
 	}
 
