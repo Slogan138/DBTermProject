@@ -28,7 +28,7 @@ public class PaymentDao {
 	public List<Payment> getPayment(String cinemaName, String roomName, String movieName, int username) {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery(
-				"from Payment where cinema_name = :cinemaName and room_name = :roomName and movie_name = :movieName and username = :username");
+				"from Payment where cinema_name = :cinemaName and room_name = :roomName and movie_name = :movieName and user_id = :username");
 		query.setParameter("cinemaName", cinemaName);
 		query.setParameter("roomName", roomName);
 		query.setParameter("movieName", movieName);
@@ -39,7 +39,7 @@ public class PaymentDao {
 
 	public List<Payment> getPaymentsByUserId(int userId) {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from Payment where username = :username");
+		Query query = session.createQuery("from Payment where user_id = :username");
 		query.setParameter("username", userId);
 		return query.getResultList();
 	}
@@ -48,7 +48,7 @@ public class PaymentDao {
 			String paymentType, int fee) {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery(
-				"from Payment where username = :userId and movie_name = :movieName and cinema_Name = :cinemaName and room_name = :roomName and paymentType = :paymentType and fee = :fee");
+				"from Payment where user_id = :userId and movie_name = :movieName and cinema_Name = :cinemaName and room_name = :roomName and paymentType = :paymentType and fee = :fee");
 		query.setParameter("userId", userId);
 		query.setParameter("cinemaName", cinemaName);
 		query.setParameter("roomName", roomName);
