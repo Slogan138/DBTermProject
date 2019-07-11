@@ -144,11 +144,12 @@
 	</definition>
 
 	<definition name="checkMySeatNumbers" extends="base">
-		<put-attribute name="title" value="Check My Seat Numbers page" />
+		<put-attribute name="title"
+			value="Check My Seat Numbers page" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/checkMySeatNumbers.jsp" />
 	</definition>
-	
+
 	<definition name="scheduleInventory" extends="base">
 		<put-attribute name="title" value="Schedule Inventory" />
 		<put-attribute name="body"
@@ -159,6 +160,12 @@
 		<put-attribute name="title" value="Add Schedule" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/addSchedule.jsp" />
+	</definition>
+
+	<definition name="updateSchedule" extends="base">
+		<put-attribute name="title" value="Update Schedule page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/updateSchedule.jsp" />
 	</definition>
 	
 </tiles-definitions>

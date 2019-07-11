@@ -43,7 +43,7 @@ public class AdminController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private ScheduleService scheduleService;
 
@@ -56,7 +56,7 @@ public class AdminController {
 	public String adminSchedule(Model model) {
 
 		List<Schedule> scheduleList = scheduleService.getSchedules();
-		model.addAttribute("scheduleList", scheduleList);		
+		model.addAttribute("scheduleList", scheduleList);
 
 		return "scheduleInventory";
 	}
@@ -296,5 +296,48 @@ public class AdminController {
 		movieService.deleteMovie(movie);
 
 		return "redirect:/admin/movieInventory";
+	}
+
+	@RequestMapping(value = "/scheduleInventory/deleteSchedule", method = RequestMethod.GET)
+	public String deleteCinema(@RequestParam("cinemaName") String cinemaName, @RequestParam("roomName") String roomName,
+			@RequestParam("startTime") String startTime, HttpServletRequest request) {
+
+		Schedule schedule = scheduleService.getSchedule(cinemaName, roomName, startTime);
+
+		scheduleService.deleteSchedule(schedule);
+
+		return "redirect:/admin/scheduleInventory";
+	}
+
+	@RequestMapping(value = "/scheduleInventory/updateSchedule", method = RequestMethod.GET)
+
+	public String updateSchedules(@RequestParam("cinemaName") String cinemaName,
+			@RequestParam("roomName") String roomName, @RequestParam("startTime") String startTime, Model model) {
+
+		Schedule schedule = scheduleService.getSchedule(cinemaName, roomName, startTime);
+
+		model.addAttribute(schedule);
+
+		return "updateSchedule";
+	}
+
+	@RequestMapping(value = "/scheduleInventory/updateSchedule", method = RequestMethod.POST)
+
+	public String updateSchedulePost(@Valid Schedule schedule, BindingResult result, HttpServletRequest request) {
+
+		if (result.hasErrors()) {
+			System.out.println("Form data has some errors");
+			List<ObjectError> errors = result.getAllErrors();
+
+			for (ObjectError error : errors) {
+				System.out.println(error.getDefaultMessage());
+			}
+
+			return "updateSchedule";
+		}
+
+		scheduleService.updateSchedule(schedule);
+
+		return "redirect:/admin/scheduleInventory";
 	}
 }
