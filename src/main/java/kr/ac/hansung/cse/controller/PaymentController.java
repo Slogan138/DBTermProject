@@ -86,7 +86,7 @@ public class PaymentController {
 		for (String seatNumber : seatNumbers)
 			seatService.updateSeat(cinemaName, roomName, startTime, Integer.parseInt(seatNumber), movieName, userId);
 
-		scheduleService.decreaseReaminSeatsCount(totalReservSeatsCount, cinemaName, roomName, startTime);
+		scheduleService.decreaseRemainSeatsCount(totalReservSeatsCount, cinemaName, roomName, startTime);
 
 		model.addAttribute("seatNumbers", seatNumbers);
 		model.addAttribute("fee", fee);

@@ -27,7 +27,7 @@ public class ScheduleService {
 		return scheduleDao.getSchdule(cinemaName, roomName, startTime);
 	}
 
-	public void decreaseReaminSeatsCount(int totalReservSeatsCount, String cinemaName, String roomName,
+	public void decreaseRemainSeatsCount(int totalReservSeatsCount, String cinemaName, String roomName,
 			String startTime) {
 		Schedule schedule = scheduleDao.getSchdule(cinemaName, roomName, startTime);
 		schedule.setRemainSeatsCount(schedule.getRemainSeatsCount() - totalReservSeatsCount);
