@@ -24,9 +24,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import kr.ac.hansung.cse.model.Cinema;
 import kr.ac.hansung.cse.model.Movie;
+import kr.ac.hansung.cse.model.Schedule;
 import kr.ac.hansung.cse.model.User;
 import kr.ac.hansung.cse.service.CinemaService;
 import kr.ac.hansung.cse.service.MovieService;
+import kr.ac.hansung.cse.service.ScheduleService;
 import kr.ac.hansung.cse.service.UserService;
 
 @Controller
@@ -41,10 +43,22 @@ public class AdminController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private ScheduleService scheduleService;
 
 	@RequestMapping
 	public String adminPage() {
 		return "admin";
+	}
+
+	@RequestMapping(value = "/scheduleInventory")
+	public String adminSchedule(Model model) {
+
+		List<Schedule> scheduleList = scheduleService.getSchedules();
+		model.addAttribute("scheduleList", scheduleList);		
+
+		return "scheduleInventory";
 	}
 
 	@RequestMapping(value = "/cinemaInventory")

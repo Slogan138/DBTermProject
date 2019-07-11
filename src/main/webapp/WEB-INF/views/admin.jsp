@@ -37,6 +37,15 @@
 				</p>
 			</div>
 		</div>
+		
+		<div class="card bg-primary">
+			<div class="card-body text-center">
+				<p class="card-text">
+					<a style="color: white; font-weight: bold; font-size: 20px;"
+						href="<c:url value="/admin/scheduleInventory"/>">스케줄 관리</a>
+				</p>
+			</div>
+		</div>
 	</div>
 
 </div>
