@@ -35,12 +35,13 @@ public class PaymentController {
 	@RequestMapping("/payment/{movieName}")
 	public String insertPaymentInfo(@PathVariable String movieName, @RequestParam("cinemaName") String cinemaName,
 			@RequestParam("roomName") String roomName, @RequestParam("startTime") String startTime,
-			@RequestParam("roomType") String roomType, Model model, HttpServletRequest request) {
+			@RequestParam("roomType") String roomType, @RequestParam("category") String category, Model model,
+			HttpServletRequest request) {
 		int adult = Integer.parseInt(request.getParameter("adult"));
 		int teenager = Integer.parseInt(request.getParameter("teenager"));
 		int benefit = Integer.parseInt(request.getParameter("benefit"));
 
-		int fee = paymentService.calcFee(adult, teenager, benefit, roomType);
+		int fee = paymentService.calcFee(adult, teenager, benefit, roomType, category);
 
 		String[] seatNumbers = request.getParameterValues("seatNumber");
 		int totalReservSeatsCount = adult + teenager + benefit;

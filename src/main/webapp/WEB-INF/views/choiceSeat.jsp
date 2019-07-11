@@ -105,7 +105,8 @@ th {
 			<button class="btn btn-primary btn-lg btn-block" type="submit">결제
 				정보 입력</button>
 			<input type="hidden" name="${_csrf.parameterName }"
-				value="${_csrf.token}" />
+				value="${_csrf.token}" /> <input type="hidden"
+				name="category" value="${category}" />
 		</form>
 		<br>
 	</div>

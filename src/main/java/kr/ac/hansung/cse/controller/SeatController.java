@@ -31,10 +31,11 @@ public class SeatController {
 	@RequestMapping(value = "/choiceSeat/{movieName}")
 	public String getCurrentSeats(@PathVariable String movieName, @RequestParam("cinemaName") String cinemaName,
 			@RequestParam("roomName") String roomName, @RequestParam("startTime") String startTime,
-			@RequestParam("roomType") String roomType, Model model) {
+			@RequestParam("roomType") String roomType, @RequestParam("category") String category, Model model) {
 		Schedule schedule = scheduleService.getSchedule(cinemaName, roomName, startTime);
 		int[] remainSeatNumbers = seatService.getRemainSeats(cinemaName, roomName, startTime);
 		int seatsCount = cinemaService.getSeatsCount(cinemaName, roomName);
+		model.addAttribute("category", category);
 		model.addAttribute("roomType", roomType);
 		model.addAttribute("schedule", schedule);
 		model.addAttribute("remainSeatNumbers", remainSeatNumbers);

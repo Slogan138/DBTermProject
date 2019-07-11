@@ -53,11 +53,14 @@ public class PaymentService {
 		paymentDao.updatePayment(payment);
 	}
 
-	public int calcFee(int adult, int teenager, int benefit, String roomType) {
+	public int calcFee(int adult, int teenager, int benefit, String roomType, String category) {
+		int totalFee = (10000 * adult) + (8000 * teenager) + (6000 * benefit);
 		if (roomType.equals("3D") || roomType.equals("IMAX"))
-			return (15000 * adult) + (12000 * teenager) + (9000 * benefit);
-		else
-			return (10000 * adult) + (8000 * teenager) + (6000 * benefit);
+			totalFee = (int) (totalFee * 1.5);
+		if (category.equals("조조") || category.equals("심야"))
+			totalFee = (int) (totalFee * 0.5);
+
+		return totalFee;
 	}
 
 	public List<Payment> getPaymentByUserId(int userId) {

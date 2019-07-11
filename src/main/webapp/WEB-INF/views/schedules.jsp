@@ -28,7 +28,7 @@
 						<td>${schedule.remainSeatsCount }</td>
 						<td><button type="button"
 								class="btn btn-sm btn-outline-secondary"
-								onClick="location.href='${pageContext.request.contextPath}/choiceSeat/${schedule.movie.movieName }?cinemaName=${schedule.scheduleInfo.cinema.cineInfo.cinemaName}&roomName=${schedule.scheduleInfo.cinema.cineInfo.roomName }&startTime=${schedule.scheduleInfo.startTime }&roomType=${roomTypes[status.index] }'">좌석선택</button>
+								onClick="location.href='${pageContext.request.contextPath}/choiceSeat/${schedule.movie.movieName }?cinemaName=${schedule.scheduleInfo.cinema.cineInfo.cinemaName}&roomName=${schedule.scheduleInfo.cinema.cineInfo.roomName }&startTime=${schedule.scheduleInfo.startTime }&roomType=${roomTypes[status.index] }&category=${schedule.category }'">좌석선택</button>
 						</td>
 
 
