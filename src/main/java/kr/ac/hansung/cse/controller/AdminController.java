@@ -64,7 +64,8 @@ public class AdminController {
 	@RequestMapping(value = "/scheduleInventory/addSchedule", method = RequestMethod.GET)
 	public String addSchedule(Model model) {
 		
-
+		Schedule schedule = new Schedule();
+		model.addAttribute("schedule", schedule);
 		return "addSchedule";
 	}
 
