@@ -60,6 +60,14 @@ public class AdminController {
 
 		return "scheduleInventory";
 	}
+	
+	@RequestMapping(value = "/scheduleInventory/addSchedule", method = RequestMethod.GET)
+	public String addSchedule(Model model) {
+		
+
+		return "addSchedule";
+	}
+
 
 	@RequestMapping(value = "/cinemaInventory")
 	public String adminCinema(Model model) {
