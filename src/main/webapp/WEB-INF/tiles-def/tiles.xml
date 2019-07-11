@@ -155,4 +155,10 @@
 			value="/WEB-INF/views/scheduleInventory.jsp" />
 	</definition>
 	
+	<definition name="addSchedule" extends="base">
+		<put-attribute name="title" value="Add Schedule" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/addSchedule.jsp" />
+	</definition>
+	
 </tiles-definitions>

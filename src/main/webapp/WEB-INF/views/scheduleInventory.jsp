@@ -30,14 +30,14 @@
 						<td>${schedule.scheduleInfo.startTime }</td>
 						<td>${schedule.endTime }</td>
 						<td>						
-							<a href="<c:url value="/admin/cinemaInventory/updateCinema/?startTime=${schedule.scheduleInfo.startTime }&cinemaName=${schedule.scheduleInfo.cinema.cineInfo.cinemaName}&movieName=${schedule.movie.movieName}"/>"><i class="far fa-file-alt fa-2x"></i></a>
-							<a href="<c:url value="/admin/cinemaInventory/deleteCinema/??startTime=${schedule.scheduleInfo.startTime }&cinemaName=${schedule.scheduleInfo.cinema.cineInfo.cinemaName}&movieName=${schedule.movie.movieName}"/>"><i class="far fa-trash-alt fa-2x"></i></a>  							 
+							<a href="<c:url value="/admin/scheduleInventory/updateSchedule/?startTime=${schedule.scheduleInfo.startTime }&cinemaName=${schedule.scheduleInfo.cinema.cineInfo.cinemaName}&movieName=${schedule.movie.movieName}"/>"><i class="far fa-file-alt fa-2x"></i></a>
+							<a href="<c:url value="/admin/scheduleInventory/deleteSchedule/?startTime=${schedule.scheduleInfo.startTime }&cinemaName=${schedule.scheduleInfo.cinema.cineInfo.cinemaName}&movieName=${schedule.movie.movieName}"/>"><i class="far fa-trash-alt fa-2x"></i></a>  							 
 						</td>
 					</tr>
 				</c:forEach> 
 			</tbody>
 		</table>
-		<a href="<c:url value="/admin/cinemaInventory/addCinema/"/>" class="btn btn-primary">상영관 추가하기</a>
+		<a href="<c:url value="/admin/scheduleInventory/addSchedule/"/>" class="btn btn-primary">스케줄 추가하기</a>
 		
 	</div>
 </div>
