@@ -60,15 +60,33 @@ public class AdminController {
 
 		return "scheduleInventory";
 	}
-	
+
 	@RequestMapping(value = "/scheduleInventory/addSchedule", method = RequestMethod.GET)
 	public String addSchedule(Model model) {
-		
+
 		Schedule schedule = new Schedule();
 		model.addAttribute("schedule", schedule);
 		return "addSchedule";
 	}
 
+	@RequestMapping(value = "/scheduleInventory/addSchedule", method = RequestMethod.POST)
+	public String addCinemaPost(@Valid Schedule schedule, BindingResult result, HttpServletRequest request) {
+
+		if (result.hasErrors()) {
+			System.out.println("Form data has some errors");
+			List<ObjectError> errors = result.getAllErrors();
+
+			for (ObjectError error : errors) {
+				System.out.println(error.getDefaultMessage());
+			}
+
+			return "addSchedule";
+		}
+
+		scheduleService.addSchedule(schedule);
+
+		return "redirect:/admin/scheduleInventory";
+	}
 
 	@RequestMapping(value = "/cinemaInventory")
 	public String adminCinema(Model model) {
