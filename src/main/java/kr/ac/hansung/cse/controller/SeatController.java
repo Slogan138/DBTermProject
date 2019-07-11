@@ -1,5 +1,10 @@
 package kr.ac.hansung.cse.controller;
 
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ac.hansung.cse.model.Schedule;
+import kr.ac.hansung.cse.model.Seat;
 import kr.ac.hansung.cse.service.CinemaService;
 import kr.ac.hansung.cse.service.ScheduleService;
 import kr.ac.hansung.cse.service.SeatService;
@@ -35,4 +41,28 @@ public class SeatController {
 		model.addAttribute("seatsCount", seatsCount);
 		return "choiceSeat";
 	}
+
+	@RequestMapping(value = "/checkMySeatNumbers/{paymentIndex}")
+	public String checkSeatNumbers(@PathVariable int paymentIndex, Model model, HttpServletResponse response)
+			throws Exception {
+		List<Seat> seats = seatService.getSeatsByPaymentIndex(paymentIndex);
+
+		String startScript = "<script>alert('좌석 번호 :";
+		String middleScript = " ";
+		String endScript = "'); history.go(-1);</script>";
+
+		for (Seat seat : seats)
+			middleScript = middleScript.concat(Integer.toString(seat.getSeatNumber()) + " ");
+
+		String resultScript = startScript.concat(middleScript);
+		resultScript = resultScript.concat(endScript);
+
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter writer = response.getWriter();
+		writer.println(resultScript);
+		writer.flush();
+
+		return "checkMySeatNumbers";
+	}
+
 }
