@@ -7,7 +7,7 @@
 		<h2>극장 선택</h2>
 		<table class="table table-striped">
 			<thead>
-				<tr class="bg-success">
+				<tr class="bg-primary text-white">
 					<th>영화관 지점</th>
 					<th>상영관</th>
 					<th>상영 종류</th>
