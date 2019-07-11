@@ -33,7 +33,7 @@
 			<div class="card-body text-center">
 				<p class="card-text">
 					<a style="color: white; font-weight: bold; font-size: 20px;"
-						href="<c:url value="/admin/cinemaInventory"/>"> 관리</a>
+						href="<c:url value="/admin/cinemaInventory"/>">영화관 관리</a>
 				</p>
 			</div>
 		</div>
