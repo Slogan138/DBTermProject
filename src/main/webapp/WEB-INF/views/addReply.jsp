@@ -5,32 +5,30 @@
 
 <div class="container-wrapper">
 	<div class="container">
-		<h1>댓글 생성하기</h1>
-		${movieName }
-		<p class="lead">댓글 생성하기</p>	
-		<sf:form action="${pageContext.request.contextPath}/viewMovie/reply?${_csrf.parameterName}=${_csrf.token}&movieName=${movieName }"
-				method="post" modelAttribute="movieReply"  enctype="multipart/form-data">
-				
-										
-				<div class="form-group">
-					<label for="comments"><strong>댓글</strong></label>
-					<sf:textarea path="comments" id="comments" class="form-control"/>
-					<sf:errors path="comments" cssStyle="color:#ff0000;" />					
-				</div>
-				
-				
-				<div class="form-group">
-					<label for="rate">평점</label>
-					<sf:input path="rate" id="rate" class="form-control" />
-				</div>
-				  						
-				 <%-- <sf:hidden path="movie" value="${movie}" /> --%>
+		<h1>영화 평가하기</h1>
 
-						
-				<input type="submit" value="submit" class="btn btn-default">   
-			</sf:form>
+		<sf:form
+			action="${pageContext.request.contextPath}/viewMovie/reply?${_csrf.parameterName}=${_csrf.token}&movieName=${movieName }"
+			method="post" modelAttribute="movieReply"
+			enctype="multipart/form-data">
+
+
+			<div class="form-group">
+				<label for="comments" style="font-weight:bold">평가</label>
+				<sf:textarea path="comments" id="comments" class="form-control" />
+				<sf:errors path="comments" cssStyle="color:#ff0000;" />
+			</div>
+
+
+			<div class="form-group">
+				<label for="rate" style="font-weight:bold">평점</label>
+				<sf:input type="number" min="0" max="10" path="rate" id="rate"
+					class="form-control" />
+			</div>
+			
+			<input type="submit" value="제출" class="btn btn-info">
+		</sf:form>
 		<br>
 	</div>
-</div>	
-	
-	
+</div>
+

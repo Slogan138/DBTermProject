@@ -18,8 +18,8 @@
 	</div>
 
 	<div class="container">
-		<p>
-			<a href="<c:url value="/" />"> Hansung Cinema Homepage</a>
+		<p>			
+			<a href="<c:url value="/"/>" class="btn btn-primary">홈으로</a>
 		</p>
 	</div>
 </div>

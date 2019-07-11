@@ -5,7 +5,8 @@
 
 <main role="main">
 
-<section class="jumbotron text-center">
+<section class="jumbotron text-center" width="100%" height="100"
+	style="padding-bottom: 0px; padding-top: 0px; padding-right: 0px; padding-left: 0px; margin-bottom: 0px;">
 
 	<div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -18,7 +19,7 @@
 
 		<!-- The slideshow -->
 		<div class="carousel-inner">
-			<div class="carousel-item active" width="100%" height="225">
+			<div class="carousel-item active">
 				<img src="<c:url value="/resources/images/spridermanMain.jpg" />"
 					alt="image" />
 				<div class="carousel-caption">
@@ -30,21 +31,28 @@
 			<div class="carousel-item">
 				<img src="<c:url value="/resources/images/toystoryMain.jpg" />"
 					alt="image" />
+				<div class="carousel-caption">
+					<h3>토이스토리4</h3>
+					<p>우리의 여행은 아직 끝나지 않았다!</p>
+				</div>
 			</div>
 			<div class="carousel-item">
 				<img src="<c:url value="/resources/images/avengersMain.jpg" />"
 					alt="image" />
+				<div class="carousel-caption">
+					<h3>어벤져스4</h3>
+					<p>Whatever it takes.</p>
+				</div>
 			</div>
+
+			<!-- Left and right controls -->
+			<a class="carousel-control-prev" href="#demo" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a> <a class="carousel-control-next" href="#demo" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
+
 		</div>
-
-		<!-- Left and right controls -->
-		<a class="carousel-control-prev" href="#demo" data-slide="prev"> <span
-			class="carousel-control-prev-icon"></span>
-		</a> <a class="carousel-control-next" href="#demo" data-slide="next">
-			<span class="carousel-control-next-icon"></span>
-		</a>
-
-	</div>
 </section>
 
 

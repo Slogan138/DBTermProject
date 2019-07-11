@@ -17,7 +17,7 @@ th {
 			method="post">
 			<div class="row">
 				<div class="col-md-2 mb-3">
-					성인 <select name="adult" class="custom-select">
+					<strong>성인</strong> <select name="adult" class="custom-select">
 						<option value=0 selected>0</option>
 						<option value=1>1</option>
 						<option value=2>2</option>
@@ -25,7 +25,7 @@ th {
 					</select>
 				</div>
 				<div class="col-md-2 mb-3">
-					청소년 <select name="teenager" class="custom-select">
+					<strong>청소년</strong> <select name="teenager" class="custom-select">
 						<option value=0 selected>0</option>
 						<option value=1>1</option>
 						<option value=2>2</option>
@@ -33,7 +33,7 @@ th {
 					</select>
 				</div>
 				<div class="col-md-2 mb-3">
-					우대 <select name="benefit" class="custom-select">
+					<strong>우대</strong> <select name="benefit" class="custom-select">
 						<option value=0 selected>0</option>
 						<option value=1>1</option>
 						<option value=2>2</option>

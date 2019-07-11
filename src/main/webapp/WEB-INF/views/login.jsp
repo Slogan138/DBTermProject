@@ -4,7 +4,7 @@
 
 <div class="container-wrapper" >
 	<div class="container" >
-		<h2 style="text-align:center">로그인</h2>
+		<h2>로그인</h2>
 		
 		<c:if test="${not empty errorMsg }">
 			<div style="color:#ff0000;"><h3>${errorMsg }</h3> </div>
@@ -25,7 +25,7 @@
 			
 			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token}"/>
 		
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary">로그인</button>
 		</form>
 	</div>
 </div>

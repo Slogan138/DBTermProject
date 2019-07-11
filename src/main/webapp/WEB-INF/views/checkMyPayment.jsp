@@ -7,14 +7,14 @@
 		<h2>예매 확인</h2>
 		<table class="table table-striped">
 			<thead>
-				<tr class="bg-success">
+				<tr class="bg-primary text-white">
 					<th>영화관 지점</th>
 					<th>상영관</th>
 					<th>시작 시간</th>
 					<th>영화 명</th>
 					<th>예매 종류</th>
 					<th>관람료</th>
-					<th>예매 취소</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>

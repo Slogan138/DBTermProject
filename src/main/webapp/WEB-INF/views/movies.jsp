@@ -5,11 +5,11 @@
 
 <div class="container-wrapper">
 	<div class="container">
-		<h2>현재 개봉 영화</h2>
+		<h2>박스 오피스</h2>
 
 		<table class="table table-striped">
 			<thead>
-				<tr class="bg-success">
+				<tr class="bg-primary text-white">
 					<th>영화 포스터</th>
 					<th>제목</th>					
 					<th>장르</th>

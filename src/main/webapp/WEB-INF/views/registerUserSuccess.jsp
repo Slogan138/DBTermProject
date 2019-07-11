@@ -6,12 +6,10 @@
 	<div class="container">
 		<section>
 			<div class="jumbotron">
-				<h1>User registered successfully!</h1>
+				<h1>한성 시네마에 가입하신 것을 환영합니다</h1>
 			</div>
 		</section>
 	</div>
 	
-	<div class="container">
-		<p> <a href="<c:url value="/" />"> eStore Homepage</a> </p>
-	</div>
+	
 </div>

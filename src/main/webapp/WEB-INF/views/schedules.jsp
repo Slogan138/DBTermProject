@@ -4,17 +4,17 @@
 
 <div class="container-wrapper">
 	<div class="container">
-		<h2>극장 선택</h2>
+		<h2>상영관 선택</h2>
 		<table class="table table-striped">
 			<thead>
-				<tr class="bg-success">
+				<tr class="bg-primary text-white">
 					<th>영화관 지점</th>
 					<th>상영관</th>
 					<th>상영 종류</th>
 					<th>시작 시간</th>
 					<th>종료 시간</th>
 					<th>잔여 좌석</th>
-					<th>예매</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
