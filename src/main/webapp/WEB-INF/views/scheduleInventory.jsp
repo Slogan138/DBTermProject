@@ -25,7 +25,7 @@
 						<td>${schedule.scheduleInfo.cinema.cineInfo.cinemaName }</td>
 						<td>${schedule.scheduleInfo.cinema.cineInfo.roomName}</td>
 						<td>${schedule.category}</td>
-						<td>${schedule.scheduleInfo.cinema.roomSeats }</td>
+						<td>${schedule.remainSeatsCount }</td>
 						<td>${schedule.movie.movieName }</td>
 						<td>${schedule.scheduleInfo.startTime }</td>
 						<td>${schedule.endTime }</td>
